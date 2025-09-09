@@ -9,7 +9,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   trigger-gitlab:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Start Gitlab Pipeline
         env:
