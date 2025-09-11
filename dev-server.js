@@ -32,9 +32,13 @@ const custom_assets = (process.env.CUSTOM_ASSETS||'').split(/ +/).filter(Boolean
     , custom_css    = (process.env.CUSTOM_CSS   ||'').split(/ +/).filter(Boolean)
 
 // Rate limiter for asset endpoints (100 req/15 min per IP)
+// Uses standard HTTP RateLimit headers. All requests (including successful ones) count towards the limit (skipSuccessfulRequests: false).
 const assetLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 min
   max: 100,
+  standardHeaders: true,    // Send standardized RateLimit headers
+  legacyHeaders: false,     // Disable X-RateLimit-* headers
+  // skipSuccessfulRequests: false, // (default) All requests count towards the limit
 })
 const p = fn => (req, res, next) => fn(req, res).catch(next)
 
