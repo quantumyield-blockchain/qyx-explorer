@@ -1,0 +1,68 @@
+# QYX Mainnet Configuration for Explorer
+# This configuration is for the QYX blockchain node that will serve the explorer
+
+# Network
+mainnet=1
+testnet=0
+regtest=0
+
+# Data directory
+datadir={DAEMON_DIR}
+
+# RPC Configuration
+server=1
+rpcuser=qyx_explorer_user
+rpcpassword=CHANGE_THIS_PASSWORD_IN_PRODUCTION
+rpcbind=127.0.0.1
+rpcallowip=127.0.0.1
+rpcport=8332
+
+# P2P Network
+port=8333
+listen=1
+discover=1
+
+# Connection limits
+maxconnections=125
+maxuploadtarget=0
+
+# Memory pool
+maxmempool=300
+mempoolexpiry=168
+
+# Transaction indexing (required for explorer)
+txindex=1
+addressindex=1
+timestampindex=1
+spentindex=1
+
+# ZMQ for real-time updates (optional but recommended)
+zmqpubrawblock=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28333
+zmqpubhashtx=tcp://127.0.0.1:28334
+zmqpubhashblock=tcp://127.0.0.1:28335
+
+# Logging
+debug=0
+printtoconsole=0
+logips=0
+
+# Performance optimizations
+dbcache=512
+prune=0
+
+# Optional: Enable REST API
+rest=1
+
+# Wallet (disable for explorer-only node)
+disablewallet=1
+
+# Optional: Reduce storage requirements (not recommended for full explorer)
+# prune=10000
+
+# Security (uncomment for production)
+# rpcauth=qyx_explorer_user:$2a$...  # Generate with rpcauth.py script
+# alertnotify=echo %s | mail -s "QYX Alert" admin@yourdomain.com
+
+# Custom QYX-specific options (if any)
+# Add any QYX blockchain specific configuration options here

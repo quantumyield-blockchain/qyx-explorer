@@ -1,0 +1,143 @@
+/* QYX Testnet Explorer Custom Styling */
+
+/* Import base QYX styles */
+@import url('../qyx-mainnet/extras.css');
+
+/* Testnet-specific color overrides */
+:root {
+  /* Use orange/amber colors to indicate testnet */
+  --qyx-primary: #FF8C00;
+  --qyx-secondary: #FF6B35;
+  --qyx-accent: #FFD700;
+  --qyx-warning: #FFA500;
+}
+
+/* Testnet warning banner */
+.testnet-banner {
+  background: linear-gradient(45deg, #FF8C00, #FF6B35);
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.testnet-banner::before {
+  content: "⚠️ ";
+}
+
+.testnet-banner::after {
+  content: " - This is a TESTNET environment for testing purposes only";
+}
+
+/* Override navbar to show testnet colors */
+.navbar {
+  border-bottom: 3px solid var(--qyx-warning);
+}
+
+.navbar-brand {
+  color: var(--qyx-warning) !important;
+}
+
+.navbar-brand::after {
+  content: " (TESTNET)";
+  font-size: 0.8em;
+  background: var(--qyx-warning);
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+/* Testnet-specific button styling */
+.btn-primary {
+  background: linear-gradient(45deg, var(--qyx-primary), var(--qyx-secondary));
+  border: none;
+  box-shadow: 0 2px 4px rgba(255, 140, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, var(--qyx-secondary), var(--qyx-accent));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);
+}
+
+/* Footer testnet indication */
+footer {
+  border-top: 3px solid var(--qyx-warning);
+}
+
+footer::before {
+  content: "🧪 TESTNET ENVIRONMENT 🧪";
+  display: block;
+  text-align: center;
+  background: var(--qyx-warning);
+  color: #000;
+  font-weight: bold;
+  padding: 4px 0;
+  margin-bottom: 1rem;
+}
+
+/* Transaction amounts in testnet styling */
+.amount {
+  color: var(--qyx-primary);
+  font-weight: bold;
+}
+
+.amount::after {
+  content: " (TEST)";
+  font-size: 0.7em;
+  opacity: 0.7;
+}
+
+/* Block confirmations with testnet styling */
+.confirmations {
+  background: linear-gradient(45deg, var(--qyx-primary), var(--qyx-secondary));
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.9em;
+}
+
+/* Faucet link styling (common for testnets) */
+.faucet-link {
+  background: var(--qyx-accent);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.faucet-link:hover {
+  background: var(--qyu-warning);
+  transform: scale(1.05);
+  text-decoration: none;
+  color: #000;
+}
+
+.faucet-link::before {
+  content: "🚰 ";
+}
+
+/* Mobile responsiveness for testnet elements */
+@media (max-width: 768px) {
+  .testnet-banner {
+    font-size: 0.9em;
+    padding: 6px 0;
+  }
+  
+  .navbar-brand::after {
+    display: none;
+  }
+  
+  footer::before {
+    font-size: 0.8em;
+  }
+}

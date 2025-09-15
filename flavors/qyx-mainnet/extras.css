@@ -1,0 +1,108 @@
+/* QYX Explorer Custom Styling */
+
+/* QYX Brand Colors - Customize these to match your brand */
+:root {
+  --qyx-primary: #2E86AB;
+  --qyx-secondary: #A23B72;
+  --qyx-accent: #F18F01;
+  --qyx-dark: #1A1A2E;
+  --qyx-light: #16213E;
+}
+
+/* Header and Navigation Customizations */
+.navbar-brand {
+  font-weight: bold;
+  color: var(--qyx-primary) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--qyx-accent) !important;
+}
+
+/* Primary Button Styling */
+.btn-primary {
+  background-color: var(--qyx-primary);
+  border-color: var(--qyx-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--qyx-secondary);
+  border-color: var(--qyx-secondary);
+}
+
+/* Link Colors */
+a {
+  color: var(--qyx-primary);
+}
+
+a:hover {
+  color: var(--qyx-accent);
+}
+
+/* Footer Customizations */
+footer {
+  background-color: var(--qyx-dark);
+  color: #ffffff;
+}
+
+footer a {
+  color: var(--qyx-accent);
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* Dark Theme Overrides */
+.dark-theme {
+  --primary-color: var(--qyx-primary);
+  --secondary-color: var(--qyx-secondary);
+  --accent-color: var(--qyx-accent);
+}
+
+/* Custom Logo Styling - if you add a logo */
+.qyx-logo {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Stats Cards */
+.stats-card {
+  border-left: 4px solid var(--qyx-primary);
+}
+
+/* Search Box */
+.search-box {
+  border: 2px solid var(--qyx-primary);
+}
+
+.search-box:focus {
+  border-color: var(--qyx-accent);
+  box-shadow: 0 0 0 0.2rem rgba(46, 134, 171, 0.25);
+}
+
+/* Transaction Status Colors */
+.confirmed {
+  color: var(--qyx-primary);
+}
+
+.unconfirmed {
+  color: var(--qyx-accent);
+}
+
+/* Block Height Badge */
+.block-height {
+  background-color: var(--qyx-primary);
+  color: white;
+}
+
+/* Custom animations for QYX branding */
+@keyframes qyx-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(46, 134, 171, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(46, 134, 171, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 134, 171, 0); }
+}
+
+.qyx-pulse {
+  animation: qyx-pulse 2s infinite;
+}

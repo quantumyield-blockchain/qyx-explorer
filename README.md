@@ -43,6 +43,35 @@ Join the translation efforts on [Transifex](https://transifex.com/blockstream/es
 
 - Mainnet, Testnet and Elements high performance electrum server
 
+- **Full whitelabeling and customization support**
+
+- **Production-ready deployment configurations**
+
+## Quick Start
+
+### For QYX Blockchain
+
+1. **Clone and build**:
+   ```bash
+   git clone https://github.com/quantumyield-blockchain/qyx-explorer.git
+   cd qyx-explorer
+   npm install
+   ```
+
+2. **Deploy with Docker**:
+   ```bash
+   docker build -t qyx-explorer -f contrib/Dockerfile .
+   docker run -p 80:80 -p 50001:50001 qyx-explorer bash -c "/srv/explorer/run.sh qyx-mainnet explorer"
+   ```
+
+3. **Access your explorer**: http://localhost
+
+### For Custom Blockchain
+
+See our comprehensive guides:
+- **📚 [Deployment Guide](DEPLOYMENT.md)** - Complete deployment instructions for all platforms
+- **🎨 [Whitelabeling Guide](WHITELABELING.md)** - Full customization and branding guide
+
 ## Developing
 
 To start a development server with live babel/browserify transpilation, run:
