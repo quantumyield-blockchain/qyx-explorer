@@ -1,0 +1,66 @@
+# QYX Testnet Configuration for Explorer
+# This configuration is for the QYX testnet blockchain node
+
+# Network
+mainnet=0
+testnet=1
+regtest=0
+
+# Data directory  
+datadir={DAEMON_DIR}
+
+# RPC Configuration
+server=1
+rpcuser=qyx_testnet_user
+rpcpassword=CHANGE_THIS_PASSWORD_IN_PRODUCTION
+rpcbind=127.0.0.1
+rpcallowip=127.0.0.1
+rpcport=18332
+
+# P2P Network
+port=18333
+listen=1
+discover=1
+
+# Connection limits (can be lower for testnet)
+maxconnections=50
+maxuploadtarget=0
+
+# Memory pool
+maxmempool=100
+mempoolexpiry=168
+
+# Transaction indexing (required for explorer)
+txindex=1
+addressindex=1
+timestampindex=1
+spentindex=1
+
+# ZMQ for real-time updates
+zmqpubrawblock=tcp://127.0.0.1:28432
+zmqpubrawtx=tcp://127.0.0.1:28433
+zmqpubhashtx=tcp://127.0.0.1:28434
+zmqpubhashblock=tcp://127.0.0.1:28435
+
+# Logging (more verbose for testnet debugging)
+debug=net,rpc,http,zmq
+printtoconsole=1
+logips=1
+
+# Performance (can be lower for testnet)
+dbcache=256
+prune=0
+
+# REST API
+rest=1
+
+# Wallet (disable for explorer-only node)
+disablewallet=1
+
+# Testnet-specific optimizations
+assumevalid=0  # Validate all blocks for testing
+checkblocks=100
+checklevel=1
+
+# Custom QYX testnet options
+# Add any QYX testnet specific configuration options here
