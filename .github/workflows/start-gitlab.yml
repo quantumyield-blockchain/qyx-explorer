@@ -1,6 +1,6 @@
 name: Start GitLab CI
 permissions:
-  contents: read
+  contents: write
 on:
   # Use pull_request_target to run the workflow from the base branch (e.g., main)
   # This ensures the trusted workflow logic executes, even for PRs from forks.
